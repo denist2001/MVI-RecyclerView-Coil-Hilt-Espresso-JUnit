@@ -1,4 +1,4 @@
-package com.denis.mvi_recyclerview_coil_hilt_espresso_junit
+package com.denis.mvi_recyclerview_coil_hilt_espresso_junit.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

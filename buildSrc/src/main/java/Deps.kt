@@ -19,8 +19,9 @@ object Deps {
     // dependency injection section
     const val hilt_android = "com.google.dagger:hilt-android:${Versions.hilt_version}"
     const val hilt_android_compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt_version}"
-    const val hilt_lifecycle_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.androidx_hilt_version}"
     const val hilt_android_gradle_plugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt_version}"
+    const val hilt_compiler = "androidx.hilt:hilt-compiler:${Versions.androidx_hilt_version}"
+    const val hilt_lifecycle_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.androidx_hilt_version}"
     // unit test section
     const val junit = "junit:junit:${Versions.junit_version}"
     // instrumentation test section

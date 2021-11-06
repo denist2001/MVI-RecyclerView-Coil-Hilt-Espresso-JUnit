@@ -55,6 +55,7 @@ dependencies {
     implementation Deps.hilt_android
     implementation Deps.hilt_lifecycle_viewmodel
     kapt Deps.hilt_android_compiler
+    kapt Deps.hilt_compiler
     // unit test section
     testImplementation Deps.junit
     // instrumentation test section
