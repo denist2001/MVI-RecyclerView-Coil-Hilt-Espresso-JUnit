@@ -15,8 +15,16 @@ object Versions {
     const val hilt_version = "2.38.1"
     const val androidx_hilt_version = "1.0.0-alpha03"
 
+    // Network section
+    const val retrofit_version = "2.9.0"
+
+    // Paging section
+    const val paging_version = "3.1.0-rc01"
+
     // Unit tests
     const val junit_version = "4.13.2"
+    const val mockk_version = "1.11.0"
+    const val kotlinx_coroutines_test_version = "1.4.3"
 
     // Instrumentation tests
     const val androidx_junit_version = "1.1.3"

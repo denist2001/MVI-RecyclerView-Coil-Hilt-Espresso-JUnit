@@ -16,6 +16,11 @@ object Deps {
     const val navigation_fragment_ktx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation_version}"
     const val navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation_version}"
     const val navigation_safe_args_gradle_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation_version}"
+    // retrofit 2 section
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit_version}"
+    const val converter_gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit_version}"
+    // androidx - paging
+    const val paging_runtime_ktx = "androidx.paging:paging-runtime-ktx:${Versions.paging_version}"
     // dependency injection section
     const val hilt_android = "com.google.dagger:hilt-android:${Versions.hilt_version}"
     const val hilt_android_compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt_version}"
@@ -24,6 +29,10 @@ object Deps {
     const val hilt_lifecycle_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.androidx_hilt_version}"
     // unit test section
     const val junit = "junit:junit:${Versions.junit_version}"
+    // mockk test section
+    const val mockk = "io.mockk:mockk:${Versions.mockk_version}"
+    // coroutine test section
+    const val coroutine_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinx_coroutines_test_version}"
     // instrumentation test section
     const val androidx_junit = "androidx.test.ext:junit:${Versions.androidx_junit_version}"
     const val espresso_core = "androidx.test.espresso:espresso-core:${Versions.androidx_espresso_core_version}"
