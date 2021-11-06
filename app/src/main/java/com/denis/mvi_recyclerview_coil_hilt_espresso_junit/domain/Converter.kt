@@ -6,6 +6,12 @@ import javax.inject.Inject
 
 class Converter @Inject constructor() {
     fun convertFromRepositoryToPresentation(repositoryData: RepositoryData): PresentationData {
-        return PresentationData(true)
+        return PresentationData(
+            albumId = repositoryData.albumId,
+            id = repositoryData.id,
+            title = repositoryData.title,
+            url = repositoryData.url,
+            thumbnailUrl = repositoryData.thumbnailUrl,
+        )
     }
 }
