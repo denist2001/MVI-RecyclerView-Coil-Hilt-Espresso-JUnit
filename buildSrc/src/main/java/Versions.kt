@@ -13,7 +13,7 @@ object Versions {
 
     // DI
     const val hilt_version = "2.38.1"
-    const val androidx_hilt_version = "1.0.0-alpha02"
+    const val androidx_hilt_version = "1.0.0-alpha03"
 
     // Unit tests
     const val junit_version = "4.13.2"
