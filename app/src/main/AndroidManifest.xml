@@ -3,6 +3,7 @@
     package="com.denis.mvi_recyclerview_coil_hilt_espresso_junit">
 
     <application
+        android:name=".ApplicationClass"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
