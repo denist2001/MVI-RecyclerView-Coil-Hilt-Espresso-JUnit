@@ -56,8 +56,15 @@ dependencies {
     implementation Deps.hilt_lifecycle_viewmodel
     kapt Deps.hilt_android_compiler
     kapt Deps.hilt_compiler
+    // network section
+    implementation Deps.retrofit
+    implementation Deps.converter_gson
+    // paging section
+    implementation Deps.paging_runtime_ktx
     // unit test section
     testImplementation Deps.junit
+    testImplementation Deps.mockk
+    testImplementation Deps.coroutine_test
     // instrumentation test section
     androidTestImplementation Deps.androidx_junit
     androidTestImplementation Deps.espresso_core
