@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -10,10 +11,10 @@ android {
 
     defaultConfig {
         applicationId "com.denis.mvi_recyclerview_coil_hilt_espresso_junit"
-        minSdk 21
-        targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        minSdk Config.minSdk
+        targetSdk Config.targetSdk
+        versionCode Config.versionCode
+        versionName Config.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -44,6 +45,9 @@ dependencies {
     // lifecycle section
     implementation Deps.lifecycle_livedata_ktx
     implementation Deps.lifecycle_viewmodel_ktx
+    // navigation component
+    implementation Deps.navigation_fragment_ktx
+    implementation Deps.navigation_ui_ktx
     // dependency injection section
     implementation Deps.hilt_android
     implementation Deps.hilt_lifecycle_viewmodel

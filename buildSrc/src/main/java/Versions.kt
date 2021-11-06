@@ -7,6 +7,7 @@ object Versions {
     const val constraintlayout_version = "2.1.1"
     const val lifecycle_livedata_ktx_version = "2.4.0"
     const val lifecycle_viewmodel_ktx_version = "2.4.0"
+    const val navigation_version = "2.3.0"
     const val kotlin_gradle_plugin_version = "1.5.31"
     const val gradle_version = "7.0.3"
 
