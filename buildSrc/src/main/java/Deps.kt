@@ -21,6 +21,8 @@ object Deps {
     const val converter_gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit_version}"
     // androidx - paging
     const val paging_runtime_ktx = "androidx.paging:paging-runtime-ktx:${Versions.paging_version}"
+    // image downloading and presenting section
+    const val coil_kt = "io.coil-kt:coil:${Versions.coil_kt_version}"
     // dependency injection section
     const val hilt_android = "com.google.dagger:hilt-android:${Versions.hilt_version}"
     const val hilt_android_compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt_version}"

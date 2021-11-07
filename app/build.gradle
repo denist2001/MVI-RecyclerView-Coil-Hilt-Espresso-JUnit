@@ -61,6 +61,8 @@ dependencies {
     implementation Deps.converter_gson
     // paging section
     implementation Deps.paging_runtime_ktx
+    // image downloading and presenting
+    implementation Deps.coil_kt
     // unit test section
     testImplementation Deps.junit
     testImplementation Deps.mockk
