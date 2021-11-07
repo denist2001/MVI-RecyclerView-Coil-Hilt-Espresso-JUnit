@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.denis.mvi_recyclerview_coil_hilt_espresso_junit">
+
+    <application>
+        <activity
+            android:name="com.denis.mvi_recyclerview_coil_hilt_espresso_junit.HiltTestActivity"
+            android:exported="false">
+        </activity>
+    </application>
+</manifest>

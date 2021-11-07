@@ -32,4 +32,9 @@ object Versions {
     // Instrumentation tests
     const val androidx_junit_version = "1.1.3"
     const val androidx_espresso_core_version = "3.4.0"
+    const val mockwebserver_version = "4.9.0"
+    const val uiautomator_version = "2.2.0"
+    const val androidx_test_version = "1.4.0"
+    const val awaitility_version = "3.1.6"
+    const val fragment_version = "1.3.6"
 }

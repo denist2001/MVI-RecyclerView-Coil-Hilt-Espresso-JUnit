@@ -13,11 +13,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.denis.mvi_recyclerview_coil_hilt_espresso_junit.R
 import com.denis.mvi_recyclerview_coil_hilt_espresso_junit.databinding.ItemsFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@ExperimentalCoroutinesApi
 @InternalCoroutinesApi
 @AndroidEntryPoint
 class ItemsFragment : Fragment(R.layout.items_fragment) {
@@ -51,7 +53,7 @@ class ItemsFragment : Fragment(R.layout.items_fragment) {
             adapter = itemsListAdapter
             layoutManager = linearLayoutManager
         }
-        itemsListAdapter.setClickCollector { item, direction ->
+        itemsListAdapter.setClickCollector { _, direction ->
             findNavController().navigate(direction)
         }
         viewLifecycleOwner.lifecycleScope.launch {

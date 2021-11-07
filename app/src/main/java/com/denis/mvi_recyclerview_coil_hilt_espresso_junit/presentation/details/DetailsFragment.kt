@@ -3,7 +3,6 @@ package com.denis.mvi_recyclerview_coil_hilt_espresso_junit.presentation.details
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import coil.load
 import coil.size.Scale
@@ -14,7 +13,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailsFragment : Fragment(R.layout.details_fragment) {
-    private val viewModel by viewModels<DetailsViewModel>()
     private var itemId = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
