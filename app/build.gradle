@@ -16,7 +16,7 @@ android {
         versionCode Config.versionCode
         versionName Config.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.denis.mvi_recyclerview_coil_hilt_espresso_junit.MainTestRunner"
     }
 
     buildTypes {
@@ -61,6 +61,8 @@ dependencies {
     implementation Deps.converter_gson
     // paging section
     implementation Deps.paging_runtime_ktx
+    // image downloading and presenting
+    implementation Deps.coil_kt
     // unit test section
     testImplementation Deps.junit
     testImplementation Deps.mockk
@@ -68,4 +70,20 @@ dependencies {
     // instrumentation test section
     androidTestImplementation Deps.androidx_junit
     androidTestImplementation Deps.espresso_core
+    androidTestImplementation Deps.espresso_web
+    androidTestImplementation Deps.espresso_intents
+    androidTestImplementation Deps.espresso_contrib
+    androidTestImplementation Deps.fragment_ktx
+    kaptAndroidTest Deps.hilt_android_compiler
+    androidTestAnnotationProcessor Deps.hilt_android_compiler
+    androidTestImplementation Deps.hilt_android_testing
+    androidTestImplementation Deps.mockk_android
+    androidTestImplementation Deps.mockwebserver
+    androidTestImplementation Deps.uiautomator
+    androidTestImplementation Deps.androidx_test_rules
+    androidTestImplementation Deps.androidx_test_runner
+    androidTestImplementation Deps.awaitility
+    androidTestImplementation Deps.androidx_fragment
+    androidTestImplementation Deps.androidx_fragment_testing
+    androidTestImplementation Deps.navigation_testing
 }
