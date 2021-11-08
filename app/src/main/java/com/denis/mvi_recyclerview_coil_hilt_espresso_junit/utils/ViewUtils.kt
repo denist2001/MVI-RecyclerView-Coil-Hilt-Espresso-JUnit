@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.callbackFlow
 @ExperimentalCoroutinesApi
 fun View.clicks(): Flow<Unit> = callbackFlow {
     setOnClickListener {
-        this.trySend(Unit).isSuccess
+        trySend(Unit).isSuccess
     }
     awaitClose { setOnClickListener(null) }
 }

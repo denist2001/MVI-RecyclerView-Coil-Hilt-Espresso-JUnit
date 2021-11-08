@@ -15,7 +15,7 @@ import javax.inject.Singleton
 @Singleton
 class ItemsListAdapter @Inject constructor() : PagingDataAdapter<PresentationData, ItemViewHolder>(DiffCallback()) {
 
-    private lateinit var clickFlowCollector: (item: PresentationData, direction: NavDirections) -> Unit
+    private var clickFlowCollector: ((direction: NavDirections) -> Unit)? = null
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(getItem(position))
@@ -25,7 +25,7 @@ class ItemsListAdapter @Inject constructor() : PagingDataAdapter<PresentationDat
         return ItemViewHolder.create(parent, clickFlowCollector)
     }
 
-    fun setClickCollector(clickCollector: (item: PresentationData, direction: NavDirections) -> Unit) {
+    fun setClickCollector(clickCollector: ((direction: NavDirections) -> Unit)?) {
         clickFlowCollector = clickCollector
     }
 }

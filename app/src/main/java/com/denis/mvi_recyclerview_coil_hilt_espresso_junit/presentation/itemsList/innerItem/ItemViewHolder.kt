@@ -22,7 +22,7 @@ import kotlinx.coroutines.flow.onEach
 
 class ItemViewHolder(
     itemView: View,
-    val clickFlowCollector: (item: PresentationData, direction: NavDirections) -> Unit
+    private val clickFlowCollector: ((direction: NavDirections) -> Unit)?
 ) : RecyclerView.ViewHolder(itemView) {
 
     private var lastTime = 0L
@@ -30,7 +30,7 @@ class ItemViewHolder(
     companion object {
         fun create(
             parent: ViewGroup,
-            clickFlowCollector: (item: PresentationData, direction: NavDirections) -> Unit
+            clickFlowCollector: ((direction: NavDirections) -> Unit)?
         ): ItemViewHolder {
             val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.inner_item, parent, false)
@@ -65,7 +65,7 @@ class ItemViewHolder(
                     title = item.title,
                     url = item.url
                 )
-                clickFlowCollector(item, direction)
+                clickFlowCollector?.let { collector -> collector(direction) }
             }
         }.launchIn(MainScope())
     }

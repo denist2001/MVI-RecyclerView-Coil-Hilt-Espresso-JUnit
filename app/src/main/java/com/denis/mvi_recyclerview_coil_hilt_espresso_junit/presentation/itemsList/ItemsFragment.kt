@@ -12,9 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.denis.mvi_recyclerview_coil_hilt_espresso_junit.R
 import com.denis.mvi_recyclerview_coil_hilt_espresso_junit.databinding.ItemsFragmentBinding
+import com.denis.mvi_recyclerview_coil_hilt_espresso_junit.utils.throttleFirst
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -46,15 +49,22 @@ class ItemsFragment : Fragment(R.layout.items_fragment) {
     }
 
     private fun setupRecyclerView() {
+        lifecycleScope.launchWhenResumed {
+            callbackFlow {
+                itemsListAdapter.setClickCollector { direction ->
+                    trySend(direction)
+                }
+                awaitClose { itemsListAdapter.setClickCollector(null) }
+            }.throttleFirst(1000).collectLatest { direction ->
+                findNavController().navigate(direction)
+            }
+        }
         itemsListAdapter.stateRestorationPolicy =
             RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
         linearLayoutManager = LinearLayoutManager(context)
         with(binding.itemsListRv) {
             adapter = itemsListAdapter
             layoutManager = linearLayoutManager
-        }
-        itemsListAdapter.setClickCollector { _, direction ->
-            findNavController().navigate(direction)
         }
         viewLifecycleOwner.lifecycleScope.launch {
             itemsListAdapter.loadStateFlow.collectLatest { loadState ->
